@@ -45,6 +45,19 @@
   }
 }
 
+a {
+  font-size: 2rem;
+  color: currentColor;
+  text-decoration: none;
+  text-transform: capitalize;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--color-secondary);
+  }
+}
+
 .btn {
   background-color: var(--color-primary);
   color: #fff;
