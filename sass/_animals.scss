@@ -1,0 +1,77 @@
+.animals {
+  grid-column: center-start / center-end;
+  margin: 15rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 7rem;
+}
+
+.animal {
+  background-color: var(--color-grey-light-1);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+
+  &__img {
+    width: 100%;
+    height: 15vh;
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+  }
+
+  &__like {
+    fill: var(--color-primary-dark);
+    width: 3rem;
+    height: 3rem;
+
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    justify-self: end;
+    margin: 1rem;
+  }
+
+  &__name {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    align-self: end;
+    z-index: 3;
+
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--color-secondary);
+    color: var(--color-grey-light-1);
+  }
+
+  &__location,
+  &__family,
+  &__population,
+  &__danger {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    .abbriviation {
+      margin-right: 1rem;
+      transform: translateY(0.3rem);
+      align-self: center;
+    }
+
+    svg {
+      fill: var(--color-primary);
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+  }
+}

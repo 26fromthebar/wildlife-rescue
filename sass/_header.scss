@@ -1,0 +1,65 @@
+.header {
+  background-color: var(--color-grey-dark-1);
+  grid-column: full-start / col-end 6;
+  background-image: linear-gradient(rgba(#101d2c, 0.85), rgba(#101d2c, 0.85)),
+    url(/img/africa-3-resized.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 8rem 8rem;
+
+  display: grid;
+  grid-template-rows: 1fr min-content minmax(min-content, 6rem) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  row-gap: 1.5rem;
+  justify-content: center;
+
+  @media only screen and (max-width: $breakpoint-small) {
+    grid-column: 1 / -1;
+  }
+
+  @media only screen and (max-width: $breakpoint-tiny) {
+    padding: 4rem 5rem;
+  }
+
+  &__logo {
+    height: 4rem;
+    justify-self: center;
+  }
+
+  &__btn {
+    align-self: center;
+    justify-self: start;
+  }
+
+  &__collaboration-text {
+    font-size: 1.5rem;
+    color: var(--color-grey-light-2);
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 0.3rem;
+    align-items: center;
+
+    &::before,
+    &::after {
+      content: '';
+      height: 0.2rem;
+      color: currentColor;
+      display: block;
+    }
+  }
+
+  &__collaboration-logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    justify-items: center;
+    align-items: center;
+
+    img {
+      max-height: 3.5rem;
+      max-width: 100%;
+      filter: grayscale(1) brightness(110%);
+    }
+  }
+}
