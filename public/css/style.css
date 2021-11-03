@@ -38,17 +38,17 @@ body {
 .container {
   display: grid;
   grid-template-rows: 70vh min-content 40vw repeat(3, min-content);
-  grid-template-columns: [sidebar-start] 12em [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-columns: [sidebar-start] 16em [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
 @media only screen and (max-width: 62.5em) {
   .container {
-    grid-template-rows: 8em 70vh min-content 40vw repeat(3, min-content);
+    grid-template-rows: 10em 70vh min-content 40vw repeat(3, min-content);
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
   }
 }
 @media only screen and (max-width: 50em) {
   .container {
-    grid-template-rows: 6rem calc(100vh - 6rem) repeat(6, min-content);
+    grid-template-rows: 8rem calc(100vh - 6rem) repeat(6, min-content);
   }
 }
 
@@ -92,13 +92,19 @@ body {
 }
 
 a {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: currentColor;
   text-decoration: none;
   text-transform: capitalize;
 }
 a:hover, a:focus, a:active {
   color: var(--color-secondary);
+}
+@media only screen and (max-width: 25em) {
+  a {
+    font-size: 2rem;
+  }
 }
 
 .btn {
@@ -151,15 +157,31 @@ a:hover, a:focus, a:active {
 .nav-list {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 3em;
   position: fixed;
-  margin-block: 2em;
+  margin-top: 8em;
   list-style: none;
+}
+.nav-list li {
+  border-bottom: 1px solid currentColor;
+  font-family: var(--font-display);
+}
+@media only screen and (max-width: 62.5em) {
+  .nav-list li {
+    border-bottom: none;
+  }
 }
 @media only screen and (max-width: 62.5em) {
   .nav-list {
     flex-direction: row;
-    gap: 4em;
+    gap: 8em;
+    position: unset;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 41.25em) {
+  .nav-list {
+    gap: 5em;
   }
 }
 @media only screen and (max-width: 41.25em) {
@@ -169,7 +191,7 @@ a:hover, a:focus, a:active {
 }
 @media only screen and (max-width: 25em) {
   .nav-list {
-    gap: 1.5em;
+    gap: 1em;
   }
 }
 
@@ -269,6 +291,8 @@ a:hover, a:focus, a:active {
   height: 8rem;
   border-radius: 50%;
   display: block;
+  object-fit: cover;
+  object-position: center;
 }
 .members__years {
   text-transform: uppercase;

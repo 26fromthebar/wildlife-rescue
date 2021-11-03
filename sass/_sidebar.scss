@@ -17,16 +17,32 @@
 .nav-list {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 3em;
 
   position: fixed;
-  margin-block: 2em;
+  margin-top: 8em;
 
   list-style: none;
 
+  & li {
+    border-bottom: 1px solid currentColor;
+    font-family: var(--font-display);
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      border-bottom: none;
+    }
+  }
+
   @media only screen and (max-width: $breakpoint-medium) {
     flex-direction: row;
-    gap: 4em;
+    gap: 8em;
+
+    position: unset;
+    margin: 0;
+  }
+
+  @media only screen and (max-width: $breakpoint-tiny) {
+    gap: 5em;
   }
 
   @media only screen and (max-width: $breakpoint-tiny) {
@@ -34,6 +50,6 @@
   }
 
   @media only screen and (max-width: $breakpoint-micro) {
-    gap: 1.5em;
+    gap: 1em;
   }
 }
